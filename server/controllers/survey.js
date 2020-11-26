@@ -12,8 +12,6 @@ let mongoose = require('mongoose');
 // Create a reference to the model
 let Survey = require('../models/survey');
 
-let surveyController = require('./survey');
-
 module.exports.displaySurveyList = (req, res, next) => {
     Survey.find((err, surveyList) => {
         if(err)
@@ -62,7 +60,6 @@ module.exports.processAddPage = (req, res, next) => {
             // Refresh the Survey List
             res.redirect('/survey-list');
         }
-
     });
 };
 
